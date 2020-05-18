@@ -101,17 +101,17 @@ def process_nn_dict(nn_dict):
 			try:
 				float_val = float(nn_dict[key])
 				if key == "Age":
-					agescaler = pickle.load("age_scaler.pkl")
+					agescaler = pickle.load("trained_models/age_scaler.pkl")
 					float_val = agescaler.transform(numpy.array(nn_dict[key]).reshape(-1,1))[0][0]
 					#normalize on the age scaler
 
 				elif key == "HeightCM":
-					htscaler = pickle.load("ht_scaler.pkl")
+					htscaler = pickle.load("trained_models/ht_scaler.pkl")
 					float_val = htscaler.transform(numpy.array(nn_dict[key]).reshape(-1,1))[0][0]
 					#normalize on the height scaler
 
 				elif key == "WeightKG":
-					wtscaler = pickle.load("wt_scaler.pkl")
+					wtscaler = pickle.load("trained_models/wt_scaler.pkl")
 					float_val = wtscaler.transform(numpy.array(nn_dict[key]).reshape(-1,1))[0][0]
 					#normalize on the weight scaler
 
