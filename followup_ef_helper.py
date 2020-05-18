@@ -47,8 +47,6 @@ def load_model():
 	loaded_model.compile(loss=mse_loss, optimizer=adam, metrics=[mse_loss])
 	point_five = loaded_model.predict(np.zeros((1, 6)))
 
-	print("POINT FIVE: ", point_five)
-
 	loaded_model.load_weights('trained_models/stochastic_model_weights.tf')
 
 	return loaded_model
@@ -83,16 +81,18 @@ def create_output_string(mean, variance):
 
 	if mean < 0.35:
 		lethality = "LETHAL"
-		if variance > 0.008:
-			uncertainty = "HIGH"
+		if variance > 0.006:
+			uncertainty = "Very trustable"
 		else:
-			uncertainty = "LOW/MID"
+			uncertainty = "Uncertain"
 	else:
 		lethality = "NOT LETHAL"
-		if variance > 0.004:
-			uncertainty = "HIGH"
+		if variance > 0.006:
+			uncertainty = "Very trustable"
+		elif variance < 0.002:
+			unceratinty = "Very untrustable"
 		else:
-			uncertainty = "LOW/MID"
+			uncertainty = "Uncertain"
 
 	output_string = """The predicted followup EF is {}, which is {}. 
 					The uncertainty is {}, classifed as {}""".format(mean, lethality, variance, uncertainty)
