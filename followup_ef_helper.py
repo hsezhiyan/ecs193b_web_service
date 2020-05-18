@@ -65,7 +65,7 @@ def prediction_and_uncertainty(followup_ef_dict):
 	global loaded_model
 
 	predictions = []
-	N = 20	
+	N = 100	
 
 	if already_loaded is False:
 		already_loaded = True
@@ -81,16 +81,18 @@ def create_output_string(mean, variance):
 
 	if mean < 0.35:
 		lethality = "LETHAL"
-		if variance > 0.006:
+		if variance > 0.006 and variance < 0.015:
 			uncertainty = "Very trustable"
+		elif variance > 0.015:
+			uncertainty = "Very untrustable"
 		else:
 			uncertainty = "Uncertain"
 	else:
 		lethality = "NOT LETHAL"
-		if variance > 0.006:
+		if variance > 0.006 and variance < 0.015:
 			uncertainty = "Very trustable"
-		elif variance < 0.002:
-			unceratinty = "Very untrustable"
+		elif variance > 0.015:
+			uncertainty = "Very untrustable"
 		else:
 			uncertainty = "Uncertain"
 

@@ -76,6 +76,7 @@ def svm_cath_page():
 
 @app.route("/svm_cath_calc", methods=["GET"])
 def svm_cath_calc():
+	
 	loaded_model = joblib.load("trained_models/svm_cath.sav")
 	cath_data = request.args.to_dict()
 
