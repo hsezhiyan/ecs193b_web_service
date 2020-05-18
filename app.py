@@ -37,7 +37,7 @@ def NN_cath_page():
 
 @app.route("/NN_cath_calc", methods=["GET"])
 def NN_cath_calc():
-	loaded_model = load_model('Cath_NNmodel.h5')
+	loaded_model = load_model('trained_models/Cath_NNmodel.h5')
 	cath_data = request.args.to_dict()
 
 	try:
