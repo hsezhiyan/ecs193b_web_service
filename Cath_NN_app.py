@@ -13,7 +13,7 @@ def home():
 
 @app.route("/NN_cath_page", methods=["GET"])
 def NN_cath_page():
-	return render_template("NN_cath_page.html")
+	return render_template("NN_cath.html")
 
 @app.route("/NN_cath_calc", methods=["GET"])
 def NN_cath_calc():
