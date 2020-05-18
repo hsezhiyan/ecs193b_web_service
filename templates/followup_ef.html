@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -302,19 +303,17 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>EEC193B Project</title>
+	<title>Followup EF Prediction</title>
 
 </head>
 
 
 	<header>
-		<h1>EEC193B Project</h1>
+		<h1>Followup EF Prediction</h1>
     </header>
 
     <ul>
-        <li><a href="/">Cath ML Model</a></li>
-        <li><a href="/svm_cath_page">Cath SVM Model</a></li>
-        <li><a href="/followup_ef_page">Followup EF ML Model</a></li>
+        <li><a href="/">Home</a></li>
     </ul>
 
 
@@ -322,92 +321,57 @@
 
         <!-- You only need this form and the form-basic.css -->
 
-        <form class="form-basic" method="get" action="search-for-record">
+        <form class="form-basic" method="get" action="followup_ef_calc">
 
             <div class="form-title-row">
-                <h1>Using ML for Cardiovascular Diseases</h1>
+                <h1>Predict a followup EF result</h1>
             </div>
-
-            <!-- <div class="form-row">
-                <label>
-                    <span>Record Number: </span>
-                    <input type="text" name="record_number">
-                </label>
-            </div> -->
 
             <div class="form-row">
-                <h4>This endpoint contains 4 trained models covering 3 different tasks: 
-                catheterization prediction, EF prediction, and followup EF prediction. The tabs
-                above take you to the models: in each tab, there is a form which asks for entries
-                (the data input), and upon submitting, you will get the prediction from the 
-                corresponding model.</h1>
-            </div>
-
-            <!-- <div class="form-row">
                 <label>
-                    <span>Messaged?</span>
-                    <input type="checkbox" name="messaged">
+                    <span>IVS d, 2D</span>
+                    <input type="text" name="IVS d, 2D">
                 </label>
             </div>
+
             <div class="form-row">
                 <label>
-                    <span>Response?</span>
-                    <input type="checkbox" name="response">
+                    <span>LV d, 2D</span>
+                    <input type="text" name="LV d, 2D">
                 </label>
             </div>
+
             <div class="form-row">
                 <label>
-                    <span>Avoid Contact?</span>
-                    <input type="checkbox" name="avoid_contact">
+                    <span>LV s, 2D</span>
+                    <input type="text" name="LV s, 2D">
                 </label>
-            </div> -->
+            </div>
 
-            <!-- <div class="form-row">
+            <div class="form-row">
                 <label>
-                    <span>Dropdown</span>
-                    <select name="dropdown">
-                        <option>Option One</option>
-                        <option>Option Two</option>
-                        <option>Option Three</option>
-                        <option>Option Four</option>
-                    </select>
+                    <span>RVSP (TR)</span>
+                    <input type="text" name="RVSP (TR)">
                 </label>
-            </div> -->
+            </div>
 
-            <!-- <div class="form-row">
+            <div class="form-row">
                 <label>
-                    <span>Textarea</span>
-                    <textarea name="textarea"></textarea>
+                    <span>LA Vol A/L Volume</span>
+                    <input type="text" name="LA Vol A/L Volume  ">
                 </label>
-            </div> -->
+            </div>
 
-            <!-- <div class="form-row">
-                <label><span>Radio</span></label>
-                <div class="form-radio-buttons">
-                    <div>
-                        <label>
-                            <input type="radio" name="radio">
-                            <span>Radio option 1</span>
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <input type="radio" name="radio">
-                            <span>Radio option 2</span>
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <input type="radio" name="radio">
-                            <span>Radio option 3</span>
-                        </label>
-                    </div>
-                </div>
-            </div> -->
+            <div class="form-row">
+                <label>
+                    <span>Ejection_Fraction</span>
+                    <input type="text" name="ACCCHF">
+                </label>
+            </div>
 
-<!--             <div class="form-row">
+            <div class="form-row">
                 <button type="submit">Submit Form</button>
-            </div> -->
+            </div>
 
         </form>
 

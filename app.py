@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, url_for, redirect
 from sklearn.svm import SVC # for the SVM cath prediction model
 
-from processing_code import process_svm_dict
+from svm_helper import process_svm_dict
+from followup_ef_helper import prediction_and_uncertainty, create_output_string
 
 import joblib 
 
@@ -11,13 +12,29 @@ app = Flask(__name__)
 def home():
 	return render_template("search_page.html")
 
+@app.route("/followup_ef_page", methods=["GET"])
+def followup_ef_page():
+	return render_template("followup_ef.html")
+
+@app.route("/followup_ef_calc", methods=["GET"])
+def followup_ef_calc():
+	ef_data = request.args.to_dict()
+
+	try:
+		mean, variance = prediction_and_uncertainty(ef_data)
+	except Exception as error:
+		return str(error)
+
+	return_string = create_output_string(mean, variance)
+	return return_string
+
 @app.route("/svm_cath_page", methods=["GET"])
 def svm_cath_page():
 	return render_template("svm_cath.html")
 
 @app.route("/svm_cath_calc", methods=["GET"])
 def svm_cath_calc():
-	loaded_model = joblib.load("svm_cath.sav")
+	loaded_model = joblib.load("trained_models/svm_cath.sav")
 	cath_data = request.args.to_dict()
 
 	try:

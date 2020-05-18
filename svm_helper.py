@@ -1,5 +1,4 @@
 
-
 def process_svm_dict(svm_dict):
 	cath_data_list = []
 
@@ -8,15 +7,7 @@ def process_svm_dict(svm_dict):
 						"ProcOutcomesLADStenosis", "ProcOutcomesLADDistStenosis", 
 						"ProcOutcomesCIRCStenosis", "ProcOutcomesRCAStenosis"]
 
-	count1 = 0
-	count2 = 0
-	count3 = 0
-
-	print(svm_dict)
-
 	for i, key in enumerate(svm_dict):
-
-		print(i)
 
 		# Column S in CleanData.csv
 		if key == "DiabetesTherapy":
