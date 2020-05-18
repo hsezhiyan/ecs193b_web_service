@@ -11,9 +11,9 @@ app = Flask(__name__)
 def home():
 	return render_template("search_page.html")
 
-@app.route("/svm_cath_page", methods=["GET"])
+@app.route("/NN_cath_page", methods=["GET"])
 def NN_cath_page():
-	return render_template("NN_cath.html")
+	return render_template("NN_cath_page.html")
 
 @app.route("/NN_cath_calc", methods=["GET"])
 def NN_cath_calc():
@@ -52,3 +52,5 @@ def NN_cath_calc():
 
 if __name__ == "__main__":
 	app.run()
+	
+	
