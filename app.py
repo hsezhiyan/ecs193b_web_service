@@ -3,7 +3,7 @@ from sklearn.svm import SVC # for the SVM cath prediction model
 
 from svm_helper import process_svm_dict
 from followup_ef_helper import prediction_and_uncertainty, create_output_string
-from processing_code import process_svm_dict
+from svm_helper import process_svm_dict
 from NNprocess_code import process_nn_dict
 from keras.models import load_model
 
@@ -29,6 +29,7 @@ def followup_ef_calc():
 		return str(error)
 
 	return_string = create_output_string(mean, variance)
+	return return_string
 
 @app.route("/NN_cath_page", methods=["GET"])
 def NN_cath_page():
