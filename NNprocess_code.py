@@ -120,7 +120,7 @@ def process_nn_dict(nn_dict):
 				else:
 					float_val /= 100.00 
 
-			except ValueError:
+			except:
 				print("Raising float value exception.")
 				raise Exception("Form element {} should be a float.".format(key))
 
