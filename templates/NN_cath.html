@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+<html>
+
+<style>
+
+    @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html{
+        background-color: #efefef;
+    }
+
+    body{
+        font:14px/1.5 Arial, Helvetica, sans-serif;
+        margin:0;
+    }
+
+
+    header{
+        box-sizing: border-box;
+        text-align: center;
+        width: 100%;
+        padding: 25px 40px;
+        background-color: #673AB7;
+        overflow: hidden;
+    }
+
+
+    header h1{
+        float: left;
+        font: normal 24px/1.5 'Open Sans', sans-serif;
+        color: #fff;
+    }
+
+    header a{
+        color:#fff;
+        float: right;
+        text-decoration: none;
+        display: inline-block;
+        padding: 13px 50px;
+        border-radius: 3px;
+        font: bold 14px/1 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        background-color:#F05283;
+
+    }
+
+    ul {
+        list-style: none;
+        border-bottom: 1px solid #EAEAEA;
+        background-color: #FFF;
+        padding: 20px;
+        margin-top: 0;
+        text-align: center;
+        margin-bottom: 75px;
+    }
+
+    ul a{
+        text-decoration: none;
+        color: #FFF;
+        text-align: left;
+        background-color: #BCB8C2;
+        padding: 10px 16px;
+        border-radius: 2px;
+        opacity: 0.8;
+        font-size: 16px;
+        display: inline-block;
+        margin: 4px;
+        line-height: 1;
+        outline: none;
+
+        transition: 0.2s ease;
+    }
+
+    ul li a.active{
+        background-color: #F05283;
+        pointer-events: none;
+    }
+
+    ul li a:hover {
+        opacity: 1;
+    }
+
+
+    ul li{
+        display: inline-block;
+    }
+
+
+    @media (max-width: 1000px) {
+
+
+        header h1{
+            float: none;
+        }
+
+        header a{
+            margin-top: 25px;
+            float: none;
+        }
+
+    }
+
+    .main-content{
+        margin-bottom: 75px;
+    }
+
+    /* -- Demo ads -- */
+
+    @media (max-width: 1200px) {
+        #bsaHolder{ display:none;}
+    }
+
+    /* -- Link to Tutorialzine -- */
+
+    .tz-link{
+        text-decoration: none;
+        color: #fff !important;
+        font: bold 36px Arial,Helvetica,sans-serif !important;
+    }
+
+    .tz-link span{
+        color: #da431c;
+    }
+
+    html{
+        background-color: #f3f3f3;
+    }
+
+    .form-basic{
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 55px;
+        box-sizing: border-box;
+
+        background-color:  #ffffff;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+
+        font: bold 14px sans-serif;
+        text-align: center;
+    }
+
+    .form-basic .form-row{
+        text-align: left;
+        margin-bottom: 22px;
+    }
+
+    .form-basic .form-title-row{
+        text-align: center;
+        margin-bottom: 55px;
+    }
+
+    /* The form title */
+
+    .form-basic h1{
+        display: inline-block;
+        box-sizing: border-box;
+        color:  #4c565e;
+        font-size: 24px;
+        padding: 0 10px 15px;
+        border-bottom: 2px solid #6caee0;
+        margin: 0;
+    }
+
+    .form-basic .form-row > label span{
+        display: inline-block;
+        box-sizing: border-box;
+        color: #5F5F5F;
+        width: 180px;
+        text-align: right;
+        vertical-align: top;
+        padding: 12px 25px;
+    }
+
+    .form-basic input{
+        color:  #5f5f5f;
+        box-sizing: border-box;
+        width: 240px;
+        box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+        padding: 12px;
+        border: 1px solid #dbdbdb;
+    }
+
+    .form-basic input[type=radio],
+    .form-basic input[type=checkbox]{
+        box-shadow: none;
+        width: auto;
+    }
+
+    .form-basic input[type=checkbox]{
+        margin-top: 13px;
+    }
+
+    .form-basic select{
+        background-color: #ffffff;
+        color:  #5f5f5f;
+        box-sizing: border-box;
+        max-width: 240px;
+        box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+        padding: 12px 8px;
+        border: 1px solid #dbdbdb;
+    }
+
+    .form-basic textarea{
+        color:  #5f5f5f;
+        box-sizing: border-box;
+        width: 240px;
+        height: 80px;
+        box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+        font: normal 13px sans-serif;
+        padding: 12px;
+        border: 1px solid #dbdbdb;
+        resize: vertical;
+    }
+
+    .form-basic .form-radio-buttons{
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .form-basic .form-radio-buttons > div{
+        margin-top: 10px;
+    }
+
+    .form-basic .form-radio-buttons label span{
+        margin-left: 8px;
+        color: #5f5f5f;
+        font-weight: normal;
+    }
+
+    .form-basic .form-radio-buttons input{
+        width: auto;
+    }
+
+    .form-basic button{
+        display: block;
+        border-radius: 2px;
+        background-color:  #6caee0;
+        color: #ffffff;
+        font-weight: bold;
+        box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+        padding: 14px 22px;
+        border: 0;
+        margin: 40px 183px 0;
+    }
+
+    /*	Making the form responsive. Remove this media query
+        if you don't need the form to work on mobile devices. */
+
+    @media (max-width: 600px) {
+
+        .form-basic{
+            padding: 30px;
+            max-width: 480px;
+        }
+
+        .form-basic .form-row{
+            max-width: 300px;
+            margin: 25px auto;
+            text-align: left;
+        }
+
+        .form-basic .form-title-row{
+            margin-bottom: 50px;
+        }
+
+        .form-basic .form-row > label span{
+            display: block;
+            text-align: left;
+            padding: 0 0 15px;
+        }
+
+        .form-basic select{
+            width: 240px;
+        }
+
+        .form-basic input[type=checkbox]{
+            margin-top:0;
+        }
+
+        .form-basic .form-radio-buttons > div{
+            margin: 0 0 10px;
+        }
+
+        .form-basic button{
+            margin: 0;
+        }
+
+    }
+
+
+</style>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Neural Network Cath Prediction</title>
+
+</head>
+
+
+	<header>
+		<h1>Neural Network Cath Prediction</h1>
+    </header>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+    </ul>
+
+
+    <div class="main-content">
+
+        <!-- You only need this form and the form-basic.css -->
+
+        <form class="form-basic" method="get" action="Neural_Network_cath_calc">
+
+            <div class="form-title-row">
+                <h1>Predict a catheterization result</h1>
+            </div>
+
+            <div class="form-row">
+                    <span>Age</span>
+                    <input type="text" name="Age">
+            </div>
+
+            <div class="form-row">
+                    <span>RiskRecentSmoker</span>
+                    <select name="RiskRecentSmoker">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ACCHxHypertension</span>
+                    <select name="ACCHxHypertension">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ACCHxHypercholesterol</span>
+                    <select name="ACCHxHypercholesterol">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ACCFamilyHxCAD</span>
+                    <select name="ACCFamilyHxCAD">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>RiskPriorMI</span>
+                    <select name="RiskPriorMI">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ACCCHF</span>
+                    <select name="ACCCHF">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ACCValvularSurgery</span>
+                    <select name="ACCValvularSurgery">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ACCPrevCoroIntervention</span>
+                    <select name="ACCPrevCoroIntervention">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>Height (in cm)</span>
+                    <input type="text" name="HeightCM" required>
+            </div>
+
+            <div class="form-row">
+                    <span>Weight (in kg)</span>
+                    <input type="text" name="WeightKG" required>
+            </div>
+
+            <div class="form-row">
+                    <span>ACCHxKidneyFailure</span>
+                    <select name="ACCHxKidneyFailure">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ACCCerebroVascDisease</span>
+                    <select name="ACCCerebroVascDisease">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ACCPeripheralVascDisease</span>
+                    <select name="ACCPeripheralVascDisease">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ACCHxChronicLungDisease</span>
+                    <select name="ACCHxChronicLungDisease">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>DiabetesHistory</span>
+                    <select name="DiabetesHistory">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>DiabetesTherapy</span>
+                    <select name="DiabetesTherapy">
+                        <option></option>
+                        <option>Diet</option>
+                        <option>Insulin</option>
+                        <option>None</option>
+                        <option>Oral</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>StudyStressSPECTMRIResult</span>
+                    <select name="StudyStressSPECTMRIResult">
+                        <option></option>
+                        <option>Indeterminant</option>
+                        <option>Negative</option>
+                        <option>Positive</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>StudyStressSPECTMRIIschemia</span>
+                    <select name="StudyStressSPECTMRIIschemia">
+                        <option></option>
+                        <option>High</option>
+                        <option>Intermediate</option>
+                        <option>Low</option>
+                        <option>Unavailable</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ProcedureDiagnostic</span>
+                    <select name="ProcedureDiagnostic">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>PCIProcedure</span>
+                    <select name="PCIProcedure">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>Scheduling_Type</span>
+                    <select name="Scheduling_Type">
+                        <option></option>
+                        <option>Elective</option>
+                        <option>Emergency</option>
+                        <option>Urgent</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>PostDiagRxRecommendation</span>
+                    <select name="PostDiagRxRecommendation">
+                        <option></option>
+                        <option>CABG</option>
+                        <option>Medical Therapy/counseling</option>
+                        <option>None</option>
+                        <option>Other Therapy with CABG or PCI</option>
+                        <option>PCI without planned CABG</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>CoronaryDominance</span>
+                    <select name="CoronaryDominance">
+                        <option></option>
+                        <option>Codominant</option>
+                        <option>Left</option>
+                        <option>Right</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>LeftMainStenosisNA</span>
+                    <select name="LeftMainStenosisNA">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ProcOutcomesLMStenosis</span>
+                    <input type="text" name="ProcOutcomesLMStenosis">
+            </div>
+
+            <div class="form-row">
+                    <span>ProxLADStenosisNA</span>
+                    <select name="ProxLADStenosisNA">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ProcOutcomesLADStenosis</span>
+                    <input type="text" name="ProcOutcomesLADStenosis">
+            </div>
+
+            <div class="form-row">
+                    <span>MidDistLADStenosisNA</span>
+                    <select name="MidDistLADStenosisNA">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ProcOutcomesLADDistStenosis</span>
+                    <input type="text" name="ProcOutcomesLADDistStenosis">
+            </div>
+
+            <div class="form-row">
+                    <span>CircStenosisNA</span>
+                    <select name="CircStenosisNA">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ProcOutcomesCIRCStenosis</span>
+                    <input type="text" name="ProcOutcomesCIRCStenosis">
+            </div>
+
+            <div class="form-row">
+                    <span>RCAStenosisNA</span>
+                    <select name="RCAStenosisNA">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ProcOutcomesRCAStenosis</span>
+                    <input type="text" name="ProcOutcomesRCAStenosis">
+            </div>
+
+            <div class="form-row">
+                    <span>RamusStenosisNA</span>
+                    <select name="RamusStenosisNA">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>ProxLADGraftStenosisNA</span>
+                    <select name="ProxLADGraftStenosisNA">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>MidDistLADGraftStenosisNA</span>
+                    <select name="MidDistLADGraftStenosisNA">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>CircGraftStenosisNA</span>
+                    <select name="CircGraftStenosisNA">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>RCAGraftStenosisNA</span>
+                    <select name="RCAGraftStenosisNA">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <div class="form-row">
+                    <span>RamusGraftStenosisNA</span>
+                    <select name="RamusGraftStenosisNA">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+            </div>
+
+            <!-- <div class="form-row">
+                    <span>Platform</span>
+                    <input type="text" name="platform">
+            </div> -->
+
+<!--             <div class="form-row">
+                    <span>Platforms</span>
+                    <select name="platform">
+                        <option></option>
+                        <option>Facebook</option>
+                        <option>Instagram</option>
+                        <option>Twitter</option>
+                        <option>Whatsapp</option>
+                        <option>WeChat</option>
+                    </select>
+            </div>
+            <div class="form-row">
+                    <span>Region</span>
+                    <select name="region">
+                        <option></option>
+                        <option>SFSJ</option>
+                        <option>Davis</option>
+                        <option>Sacramento</option>
+                    </select>
+            </div> -->
+
+            <div class="form-row">
+                <button type="submit">Submit Form</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
