@@ -5,7 +5,8 @@ from svm_helper import process_svm_dict
 from followup_ef_helper import prediction_and_uncertainty, create_output_string
 from svm_helper import process_svm_dict
 from NNprocess_code import process_nn_dict
-from keras.models import load_model
+from keras.models import model_from_json
+import numpy as np
 
 import joblib 
 
@@ -37,7 +38,17 @@ def NN_cath_page():
 
 @app.route("/NN_cath_calc", methods=["GET"])
 def NN_cath_calc():
-	loaded_model = load_model('trained_models/Cath_NNmodel.h5')
+	
+	# load json and create model
+	json_file = open('trained_models/Cath_NNmodel.json', 'r')
+	loaded_model_json = json_file.read()
+	json_file.close()
+	loaded_model = model_from_json(loaded_model_json)
+	# load weights into new model
+	loaded_model.load_weights("trained_models/CathNNwts.h5")
+
+	print("Loaded model from disk")
+
 	cath_data = request.args.to_dict()
 
 	try:
@@ -66,7 +77,8 @@ def NN_cath_calc():
 	# should be 0
 	# cath_data_list = [63,	0,	1,	1,	0,	0,	1,	0,	0,	188.0,	71.0,	0,	0,	0,	0,	0,	-1,	1,	-1,	1,	0,	2,	1,	2,	0,	0.0,	0,	0.0,	0,	0.0,	0,	0.0,	0,	0.0,	1,	1,	1,	1,	1,	1]
 
-	cath_prediction = loaded_model.predict([cath_data_list])
+	cath_data_list = np.array(cath_data_list)
+	cath_prediction = loaded_model.predict(np.array([cath_data_list]))[0][0]
 	return_string = f"Cath result is {cath_prediction}"
 	return return_string
 

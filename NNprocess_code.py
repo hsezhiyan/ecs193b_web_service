@@ -1,4 +1,5 @@
 import pickle
+import numpy
 def process_nn_dict(nn_dict):
 	cath_data_list = []
 
@@ -99,26 +100,27 @@ def process_nn_dict(nn_dict):
 				continue
 
 			try:
+
 				float_val = float(nn_dict[key])
 				if key == "Age":
-					agescaler = pickle.load("trained_models/age_scaler.pkl")
+					agescaler = pickle.load(open("trained_models/age_scaler.pkl",'rb'))
 					float_val = agescaler.transform(numpy.array(nn_dict[key]).reshape(-1,1))[0][0]
 					#normalize on the age scaler
 
 				elif key == "HeightCM":
-					htscaler = pickle.load("trained_models/ht_scaler.pkl")
+					htscaler = pickle.load(open("trained_models/ht_scaler.pkl",'rb'))
 					float_val = htscaler.transform(numpy.array(nn_dict[key]).reshape(-1,1))[0][0]
 					#normalize on the height scaler
 
 				elif key == "WeightKG":
-					wtscaler = pickle.load("trained_models/wt_scaler.pkl")
+					wtscaler = pickle.load(open("trained_models/wt_scaler.pkl",'rb'))
 					float_val = wtscaler.transform(numpy.array(nn_dict[key]).reshape(-1,1))[0][0]
 					#normalize on the weight scaler
 
 				else:
 					float_val /= 100.00 
 
-			except:
+			except ValueError:
 				print("Raising float value exception.")
 				raise Exception("Form element {} should be a float.".format(key))
 
