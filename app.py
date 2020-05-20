@@ -18,7 +18,7 @@ def home():
 
 @app.route("/ef_page", methods=["GET"])
 def ef_page():
-    return render_template("ef.html")
+    return render_template("ef_model.html")
 
 @app.route("/ef_calc", methods=["GET"])
 def ef_calc():
