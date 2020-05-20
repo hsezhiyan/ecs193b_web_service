@@ -2,14 +2,8 @@
 <html lang="en">
 <head>
 
-     <title>Health Template - News Page</title>
-<!--
+     <title>NN Model</title>
 
-Template 2098 Health
-
-http://www.tooplate.com/view/2098-health
-
--->
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
      <meta name="description" content="">
@@ -57,18 +51,18 @@ http://www.tooplate.com/view/2098-health
                     </button>
 
                     <!-- lOGO TEXT HERE -->
-                    <a href="index.html" class="navbar-brand"><i class="fa fa-h-square"></i>ealth Center</a>
+
                </div>
 
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                         <li><a href="/" class="smoothScroll">Home</a></li>
-                         <li><a href="index.html#about" class="smoothScroll">About Us</a></li>
-                         <li><a href="index.html#team" class="smoothScroll">Our Staff</a></li>
-                         <li><a href="index.html#news" class="smoothScroll">News</a></li>
-                         <li><a href="index.html#google-map" class="smoothScroll">Contact</a></li>
-                         <li class="appointment-btn"><a href="index.html#appointment">Make an appointment</a></li>
+                      <li><a href="/" class="smoothScroll">Home</a></li>
+                      <li><a href="/#about" class="smoothScroll">About</a></li>
+                      <li><a href="/svm_cath_page" class="smoothScroll">SVM Cath Model</a></li>
+                      <li><a href="#nn" class="smoothScroll">NN Cath Model</a></li>
+                      <li><a href="#ef" class="smoothScroll">EF Model</a></li>
+                      <li><a href="#followef" class="smoothScroll">Follow-up EF Model</a></li>
                     </ul>
                </div>
 
@@ -81,23 +75,23 @@ http://www.tooplate.com/view/2098-health
           <div class="container">
                <div class="row">
 
-                    <div class="col-md-8 col-sm-7">
+
                          <!-- NEWS THUMB -->
                          <div class="news-detail-thumb">
-                           <form class="form-basic" method="get" action="svm_cath_calc">
-
+                           <form class="form-basic" method="get" action="NN_cath_calc">
+                              <img id="cath_photo" src="/images/Ha1.jpg"/>
                                <div class="form-title-row">
-                                   <h1>Predict a catheterization result</h1>
+                                   <h1 class="wow fadeInUp" data-wow-delay="0.6s">Predict a catheterization result</h1>
                                </div>
 
                                <div class="form-row">
-                                       <span>Age</span>
-                                       <input type="text" name="Age">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">Age</span>
+                                       <input id="inputText" type="text" name="Age" class="wow fadeInUp" data-wow-delay="0.6s" name="Age">
                                </div>
 
                                <div class="form-row">
-                                       <span>RiskRecentSmoker</span>
-                                       <select name="RiskRecentSmoker">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">RiskRecentSmoker</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="RiskRecentSmoker">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -105,8 +99,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ACCHxHypertension</span>
-                                       <select name="ACCHxHypertension">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCHxHypertension</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCHxHypertension">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -114,8 +108,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ACCHxHypercholesterol</span>
-                                       <select name="ACCHxHypercholesterol">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCHxHypercholesterol</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCHxHypercholesterol">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -123,8 +117,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ACCFamilyHxCAD</span>
-                                       <select name="ACCFamilyHxCAD">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCFamilyHxCAD</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCFamilyHxCAD">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -132,8 +126,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>RiskPriorMI</span>
-                                       <select name="RiskPriorMI">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">RiskPriorMI</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="RiskPriorMI">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -141,8 +135,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ACCCHF</span>
-                                       <select name="ACCCHF">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCCHF</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCCHF">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -150,8 +144,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ACCValvularSurgery</span>
-                                       <select name="ACCValvularSurgery">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCValvularSurgery</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCValvularSurgery">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -159,8 +153,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ACCPrevCoroIntervention</span>
-                                       <select name="ACCPrevCoroIntervention">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCPrevCoroIntervention</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCPrevCoroIntervention">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -168,18 +162,18 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>Height (in cm)</span>
-                                       <input type="text" name="HeightCM" required>
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">Height (in cm)</span>
+                                       <input id="inputText" type="text" name="Age" class="wow fadeInUp" data-wow-delay="0.6s" name="HeightCM" required>
                                </div>
 
                                <div class="form-row">
-                                       <span>Weight (in kg)</span>
-                                       <input type="text" name="WeightKG" required>
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">Weight (in kg)</span>
+                                       <input id="inputText" type="text" name="Age" class="wow fadeInUp" data-wow-delay="0.6s" name="WeightKG" required>
                                </div>
 
                                <div class="form-row">
-                                       <span>ACCHxKidneyFailure</span>
-                                       <select name="ACCHxKidneyFailure">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCHxKidneyFailure</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCHxKidneyFailure">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -187,8 +181,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ACCCerebroVascDisease</span>
-                                       <select name="ACCCerebroVascDisease">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCCerebroVascDisease</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCCerebroVascDisease">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -196,8 +190,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ACCPeripheralVascDisease</span>
-                                       <select name="ACCPeripheralVascDisease">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCPeripheralVascDisease</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCPeripheralVascDisease">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -205,8 +199,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ACCHxChronicLungDisease</span>
-                                       <select name="ACCHxChronicLungDisease">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCHxChronicLungDisease</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCHxChronicLungDisease">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -214,8 +208,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>DiabetesHistory</span>
-                                       <select name="DiabetesHistory">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">DiabetesHistory</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="DiabetesHistory">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -223,8 +217,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>DiabetesTherapy</span>
-                                       <select name="DiabetesTherapy">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">DiabetesTherapy</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="DiabetesTherapy">
                                            <option></option>
                                            <option>Diet</option>
                                            <option>Insulin</option>
@@ -234,8 +228,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>StudyStressSPECTMRIResult</span>
-                                       <select name="StudyStressSPECTMRIResult">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">StudyStressSPECTMRIResult</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="StudyStressSPECTMRIResult">
                                            <option></option>
                                            <option>Indeterminant</option>
                                            <option>Negative</option>
@@ -244,8 +238,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>StudyStressSPECTMRIIschemia</span>
-                                       <select name="StudyStressSPECTMRIIschemia">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">StudyStressSPECTMRIIschemia</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="StudyStressSPECTMRIIschemia">
                                            <option></option>
                                            <option>High</option>
                                            <option>Intermediate</option>
@@ -255,8 +249,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ProcedureDiagnostic</span>
-                                       <select name="ProcedureDiagnostic">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProcedureDiagnostic</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ProcedureDiagnostic">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -264,8 +258,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>PCIProcedure</span>
-                                       <select name="PCIProcedure">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">PCIProcedure</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="PCIProcedure">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -273,8 +267,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>Scheduling_Type</span>
-                                       <select name="Scheduling_Type">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">Scheduling_Type</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="Scheduling_Type">
                                            <option></option>
                                            <option>Elective</option>
                                            <option>Emergency</option>
@@ -283,8 +277,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>PostDiagRxRecommendation</span>
-                                       <select name="PostDiagRxRecommendation">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">PostDiagRxRecommendation</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="PostDiagRxRecommendation">
                                            <option></option>
                                            <option>CABG</option>
                                            <option>Medical Therapy/counseling</option>
@@ -295,8 +289,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>CoronaryDominance</span>
-                                       <select name="CoronaryDominance">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">CoronaryDominance</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="CoronaryDominance">
                                            <option></option>
                                            <option>Codominant</option>
                                            <option>Left</option>
@@ -305,8 +299,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>LeftMainStenosisNA</span>
-                                       <select name="LeftMainStenosisNA">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">LeftMainStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="LeftMainStenosisNA">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -314,13 +308,13 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ProcOutcomesLMStenosis</span>
-                                       <input type="text" name="ProcOutcomesLMStenosis">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProcOutcomesLMStenosis</span>
+                                       <input id="inputText" type="text" name="Age" class="wow fadeInUp" data-wow-delay="0.6s" name="ProcOutcomesLMStenosis">
                                </div>
 
                                <div class="form-row">
-                                       <span>ProxLADStenosisNA</span>
-                                       <select name="ProxLADStenosisNA">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProxLADStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ProxLADStenosisNA">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -328,13 +322,13 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ProcOutcomesLADStenosis</span>
-                                       <input type="text" name="ProcOutcomesLADStenosis">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProcOutcomesLADStenosis</span>
+                                       <input id="inputText" type="text" name="Age" class="wow fadeInUp" data-wow-delay="0.6s" name="ProcOutcomesLADStenosis">
                                </div>
 
                                <div class="form-row">
-                                       <span>MidDistLADStenosisNA</span>
-                                       <select name="MidDistLADStenosisNA">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">MidDistLADStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="MidDistLADStenosisNA">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -342,13 +336,13 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ProcOutcomesLADDistStenosis</span>
-                                       <input type="text" name="ProcOutcomesLADDistStenosis">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProcOutcomesLADDistStenosis</span>
+                                       <input id="inputText" type="text" name="Age" class="wow fadeInUp" data-wow-delay="0.6s" name="ProcOutcomesLADDistStenosis">
                                </div>
 
                                <div class="form-row">
-                                       <span>CircStenosisNA</span>
-                                       <select name="CircStenosisNA">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">CircStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="CircStenosisNA">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -356,13 +350,13 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ProcOutcomesCIRCStenosis</span>
-                                       <input type="text" name="ProcOutcomesCIRCStenosis">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProcOutcomesCIRCStenosis</span>
+                                       <input id="inputText" type="text" name="Age" class="wow fadeInUp" data-wow-delay="0.6s" name="ProcOutcomesCIRCStenosis">
                                </div>
 
                                <div class="form-row">
-                                       <span>RCAStenosisNA</span>
-                                       <select name="RCAStenosisNA">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">RCAStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="RCAStenosisNA">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -370,13 +364,13 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ProcOutcomesRCAStenosis</span>
-                                       <input type="text" name="ProcOutcomesRCAStenosis">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProcOutcomesRCAStenosis</span>
+                                       <input id="inputText" type="text" name="Age" class="wow fadeInUp" data-wow-delay="0.6s" name="ProcOutcomesRCAStenosis">
                                </div>
 
                                <div class="form-row">
-                                       <span>RamusStenosisNA</span>
-                                       <select name="RamusStenosisNA">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">RamusStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="RamusStenosisNA">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -384,8 +378,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>ProxLADGraftStenosisNA</span>
-                                       <select name="ProxLADGraftStenosisNA">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProxLADGraftStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ProxLADGraftStenosisNA">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -393,8 +387,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>MidDistLADGraftStenosisNA</span>
-                                       <select name="MidDistLADGraftStenosisNA">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">MidDistLADGraftStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="MidDistLADGraftStenosisNA">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -402,8 +396,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>CircGraftStenosisNA</span>
-                                       <select name="CircGraftStenosisNA">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">CircGraftStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="CircGraftStenosisNA">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -411,8 +405,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>RCAGraftStenosisNA</span>
-                                       <select name="RCAGraftStenosisNA">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">RCAGraftStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="RCAGraftStenosisNA">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -420,8 +414,8 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                       <span>RamusGraftStenosisNA</span>
-                                       <select name="RamusGraftStenosisNA">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">RamusGraftStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="RamusGraftStenosisNA">
                                            <option></option>
                                            <option>Yes</option>
                                            <option>No</option>
@@ -429,17 +423,13 @@ http://www.tooplate.com/view/2098-health
                                </div>
 
                                <div class="form-row">
-                                   <button type="submit">Submit Form</button>
+                                   <button id="submit_btn" class="wow fadeInUp" data-wow-delay="0.6s" type="submit">Submit Form</button>
                                </div>
 
                            </form>
 
 
-                         </div>
-                    </div>
 
-                    <div class="col-md-4 col-sm-5">
-                         
                     </div>
 
                </div>

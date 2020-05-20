@@ -34,7 +34,7 @@ def followup_ef_calc():
 
 @app.route("/NN_cath_page", methods=["GET"])
 def NN_cath_page():
-	return render_template("NN_cath.html")
+	return render_template("nn_model.html")
 
 @app.route("/NN_cath_calc", methods=["GET"])
 def NN_cath_calc():
