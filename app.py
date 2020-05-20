@@ -16,6 +16,22 @@ app = Flask(__name__, static_url_path='', static_folder='')
 def home():
 	return render_template("search_page.html")
 
+@app.route("/ef_page", methods=["GET"])
+def ef_page():
+    return render_template("ef.html")
+
+@app.route("/ef_calc", methods=["GET"])
+def ef_calc():
+	ef_data = request.args.to_dict()
+
+	try:
+		result = prediction(ef_data)
+	except Exception as error:
+		return str(error)
+
+	return_string = ef_output_string(result)
+	return return_string
+
 @app.route("/followup_ef_page", methods=["GET"])
 def followup_ef_page():
 	return render_template("followup_ef.html")
