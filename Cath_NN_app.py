@@ -3,7 +3,7 @@ from keras.models import load_model
 
 from NNprocess_code import process_nn_dict
 
-import joblib 
+import joblib
 
 app = Flask(__name__)
 
@@ -13,11 +13,11 @@ def home():
 
 @app.route("/NN_cath_page", methods=["GET"])
 def NN_cath_page():
-	return render_template("NN_cath.html")
+	return render_template("NN_model.html")
 
 @app.route("/NN_cath_calc", methods=["GET"])
 def NN_cath_calc():
-	loaded_model = load_model('Cath_NNmodel.h5')
+	loaded_model = load_model('CathNNwts.h5')
 	cath_data = request.args.to_dict()
 
 	try:
@@ -42,7 +42,7 @@ def NN_cath_calc():
 
 	# should be 1
 	# cath_data_list = [66, 1, 1, 0, 0,  0, 0,	0,	0,	175.0,	87.6,	0,	1,	0,	0,	0,	-1,	2,	2,	1,	1,	2,	4,	1,	0,	0.0,	0,	0.0,	0,	0.5,	0,	0.9,	0,	0.0,	1,	1,	1,	1,	1,	1]
-	
+
 	# should be 0
 	# cath_data_list = [63,	0,	1,	1,	0,	0,	1,	0,	0,	188.0,	71.0,	0,	0,	0,	0,	0,	-1,	1,	-1,	1,	0,	2,	1,	2,	0,	0.0,	0,	0.0,	0,	0.0,	0,	0.0,	0,	0.0,	1,	1,	1,	1,	1,	1]
 
@@ -52,5 +52,3 @@ def NN_cath_calc():
 
 if __name__ == "__main__":
 	app.run()
-	
-	
