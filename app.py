@@ -34,7 +34,7 @@ def ef_calc():
 
 @app.route("/followup_ef_page", methods=["GET"])
 def followup_ef_page():
-	return render_template("followup_ef.html")
+	return render_template("f_ef_model.html")
 
 @app.route("/followup_ef_calc", methods=["GET"])
 def followup_ef_calc():
