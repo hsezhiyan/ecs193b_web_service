@@ -42,7 +42,7 @@ def prediction(ef_dict):
     loaded_model.summary()
     print(ef_data_list)
     prediction = loaded_model.predict(ef_data_list)
-
+    print(prediction)
     return prediction[0]
 
 def ef_output_string(pred):
