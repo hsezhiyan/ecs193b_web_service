@@ -15,19 +15,12 @@ def mse_loss(y_actual, y_pred):
 
 def load_model():
     adam = Adam(lr = 0.002, beta_1 = 0.9, beta_2 = 0.999) # a hyperparameter
-    # load json and create model
-    #json_file = open('trained_models/EFmodel.json', 'r')
-    #loaded_model_json = json_file.read()
-    #json_file.close()
-    #print("json read")
-    #loaded_model = model_from_json(loaded_model_json)
-    #print("jason loaded\n")
     # load weights into new model
     loaded_model = tf.keras.models.load_model('trained_models/EFmodel.h5')
     print("weights loaded")
     #loaded_model.compile(loss=mse_loss, optimizer=adam, metrics=[mse_loss])
     loaded_model.summary()
-    #point_five = loaded_model.predict(np.zeros((1, 6)))
+    point_five = loaded_model.predict(np.zeros((1, 5)))
 
     return loaded_model
 
@@ -39,8 +32,6 @@ def prediction(ef_dict):
     # ef_data_list = [0.14,	0.68,	0.66,	0.251869,	0.104164,	0.0272109]
     # ef_data_list = [0.212,	0.486,	0.407,	0.188189,	0.128489,	0.523256]
 
-    print(ef_data_list)
-
     global already_loaded
     global loaded_model
     print("loading model")
@@ -48,6 +39,7 @@ def prediction(ef_dict):
         already_loaded = True
         loaded_model = load_model()
     print("model loaded")
+    print(ef_data_list)
     prediction = loaded_model.predict(ef_data_list)
 
     return prediction[0]
