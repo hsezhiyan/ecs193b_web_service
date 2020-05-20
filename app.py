@@ -9,9 +9,9 @@ from NNprocess_code import process_nn_dict
 from keras.models import model_from_json
 import numpy as np
 
-import joblib 
+import joblib
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='', static_folder='')
 
 @app.route("/", methods=["GET"])
 def home():
@@ -19,7 +19,7 @@ def home():
 
 @app.route("/ef_page", methods=["GET"])
 def ef_page():
-    return render_template("ef.html")
+    return render_template("ef_model.html")
 
 @app.route("/ef_calc", methods=["GET"])
 def ef_calc():
@@ -35,7 +35,7 @@ def ef_calc():
 
 @app.route("/followup_ef_page", methods=["GET"])
 def followup_ef_page():
-	return render_template("followup_ef.html")
+	return render_template("f_ef_model.html")
 
 @app.route("/followup_ef_calc", methods=["GET"])
 def followup_ef_calc():
@@ -51,11 +51,11 @@ def followup_ef_calc():
 
 @app.route("/NN_cath_page", methods=["GET"])
 def NN_cath_page():
-	return render_template("NN_cath.html")
+	return render_template("NN_model.html")
 
 @app.route("/NN_cath_calc", methods=["GET"])
 def NN_cath_calc():
-	
+
 	# load json and create model
 	json_file = open('trained_models/Cath_NNmodel.json', 'r')
 	loaded_model_json = json_file.read()
@@ -90,7 +90,7 @@ def NN_cath_calc():
 
 	# should be 1
 	# cath_data_list = [66, 1, 1, 0, 0,  0, 0,	0,	0,	175.0,	87.6,	0,	1,	0,	0,	0,	-1,	2,	2,	1,	1,	2,	4,	1,	0,	0.0,	0,	0.0,	0,	0.5,	0,	0.9,	0,	0.0,	1,	1,	1,	1,	1,	1]
-	
+
 	# should be 0
 	# cath_data_list = [63,	0,	1,	1,	0,	0,	1,	0,	0,	188.0,	71.0,	0,	0,	0,	0,	0,	-1,	1,	-1,	1,	0,	2,	1,	2,	0,	0.0,	0,	0.0,	0,	0.0,	0,	0.0,	0,	0.0,	1,	1,	1,	1,	1,	1]
 
@@ -101,11 +101,11 @@ def NN_cath_calc():
 
 @app.route("/svm_cath_page", methods=["GET"])
 def svm_cath_page():
-	return render_template("svm_cath.html")
+	return render_template("svm_model.html")
 
 @app.route("/svm_cath_calc", methods=["GET"])
 def svm_cath_calc():
-	
+
 	loaded_model = joblib.load("trained_models/svm_cath.sav")
 	cath_data = request.args.to_dict()
 
@@ -131,7 +131,7 @@ def svm_cath_calc():
 
 	# should be 1
 	# cath_data_list = [66, 1, 1, 0, 0,  0, 0,	0,	0,	175.0,	87.6,	0,	1,	0,	0,	0,	-1,	2,	2,	1,	1,	2,	4,	1,	0,	0.0,	0,	0.0,	0,	0.5,	0,	0.9,	0,	0.0,	1,	1,	1,	1,	1,	1]
-	
+
 	# should be 0
 	# cath_data_list = [63,	0,	1,	1,	0,	0,	1,	0,	0,	188.0,	71.0,	0,	0,	0,	0,	0,	-1,	1,	-1,	1,	0,	2,	1,	2,	0,	0.0,	0,	0.0,	0,	0.0,	0,	0.0,	0,	0.0,	1,	1,	1,	1,	1,	1]
 

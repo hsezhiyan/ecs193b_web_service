@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>NN Model</title>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/magnific-popup.css">
+
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/animate.css">
+
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="css/tooplate-style.css">
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+
+          </div>
+     </section>
+
+
+     <!-- HEADER -->
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="/" class="smoothScroll">Home</a></li>
+                      <li><a href="/#about" class="smoothScroll">About</a></li>
+                      <li><a href="/svm_cath_page" class="smoothScroll">SVM Cath Model</a></li>
+                      <li><a href="/NN_cath_page" class="smoothScroll">NN Cath Model</a></li>
+                      <li><a href="/ef_page" class="smoothScroll">EF Model</a></li>
+                      <li><a href="/followup_ef_page" class="smoothScroll">Follow-up EF Model</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     <!-- NEWS DETAIL -->
+     <section id="news-detail" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+
+                         <!-- NEWS THUMB -->
+                         <div class="news-detail-thumb">
+                           <form class="form-basic" method="get" action="/NN_cath_calc">
+                              <img id="cath_photo" src="/images/Ha1.jpg"/>
+                               <div class="form-title-row">
+                                   <h1 class="wow fadeInUp" data-wow-delay="0.6s">Predict a Catheterization result</h1>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">Age</span>
+                                       <input id="inputText" type="text" class="wow fadeInUp" data-wow-delay="0.6s" name="Age">
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">RiskRecentSmoker</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="RiskRecentSmoker">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCHxHypertension</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCHxHypertension">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCHxHypercholesterol</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCHxHypercholesterol">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCFamilyHxCAD</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCFamilyHxCAD">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">RiskPriorMI</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="RiskPriorMI">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCCHF</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCCHF">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCValvularSurgery</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCValvularSurgery">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCPrevCoroIntervention</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCPrevCoroIntervention">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">Height (in cm)</span>
+                                       <input id="inputText" type="text" class="wow fadeInUp" data-wow-delay="0.6s" name="HeightCM" required>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">Weight (in kg)</span>
+                                       <input id="inputText" type="text" class="wow fadeInUp" data-wow-delay="0.6s" name="WeightKG" required>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCHxKidneyFailure</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCHxKidneyFailure">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCCerebroVascDisease</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCCerebroVascDisease">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCPeripheralVascDisease</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCPeripheralVascDisease">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ACCHxChronicLungDisease</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ACCHxChronicLungDisease">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">DiabetesHistory</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="DiabetesHistory">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">DiabetesTherapy</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="DiabetesTherapy">
+                                           <option></option>
+                                           <option>Diet</option>
+                                           <option>Insulin</option>
+                                           <option>None</option>
+                                           <option>Oral</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">StudyStressSPECTMRIResult</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="StudyStressSPECTMRIResult">
+                                           <option></option>
+                                           <option>Indeterminant</option>
+                                           <option>Negative</option>
+                                           <option>Positive</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">StudyStressSPECTMRIIschemia</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="StudyStressSPECTMRIIschemia">
+                                           <option></option>
+                                           <option>High</option>
+                                           <option>Intermediate</option>
+                                           <option>Low</option>
+                                           <option>Unavailable</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProcedureDiagnostic</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ProcedureDiagnostic">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">PCIProcedure</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="PCIProcedure">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">Scheduling_Type</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="Scheduling_Type">
+                                           <option></option>
+                                           <option>Elective</option>
+                                           <option>Emergency</option>
+                                           <option>Urgent</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">PostDiagRxRecommendation</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="PostDiagRxRecommendation">
+                                           <option></option>
+                                           <option>CABG</option>
+                                           <option>Medical Therapy/counseling</option>
+                                           <option>None</option>
+                                           <option>Other Therapy with CABG or PCI</option>
+                                           <option>PCI without planned CABG</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">CoronaryDominance</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="CoronaryDominance">
+                                           <option></option>
+                                           <option>Codominant</option>
+                                           <option>Left</option>
+                                           <option>Right</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">LeftMainStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="LeftMainStenosisNA">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProcOutcomesLMStenosis</span>
+                                       <input id="inputText" type="text" name="ProcOutcomesLMStenosis" class="wow fadeInUp" data-wow-delay="0.6s" name="ProcOutcomesLMStenosis">
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProxLADStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ProxLADStenosisNA">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProcOutcomesLADStenosis</span>
+                                       <input id="inputText" type="text" name="ProcOutcomesLADStenosis" class="wow fadeInUp" data-wow-delay="0.6s" name="ProcOutcomesLADStenosis">
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">MidDistLADStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="MidDistLADStenosisNA">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProcOutcomesLADDistStenosis</span>
+                                       <input id="inputText" type="text" name="ProcOutcomesLADDistStenosis" class="wow fadeInUp" data-wow-delay="0.6s" name="ProcOutcomesLADDistStenosis">
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">CircStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="CircStenosisNA">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProcOutcomesCIRCStenosis</span>
+                                       <input id="inputText" type="text" name="ProcOutcomesCIRCStenosis" class="wow fadeInUp" data-wow-delay="0.6s" name="ProcOutcomesCIRCStenosis">
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">RCAStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="RCAStenosisNA">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProcOutcomesRCAStenosis</span>
+                                       <input id="inputText" type="text" name="ProcOutcomesRCAStenosis" class="wow fadeInUp" data-wow-delay="0.6s" name="ProcOutcomesRCAStenosis">
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">RamusStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="RamusStenosisNA">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">ProxLADGraftStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="ProxLADGraftStenosisNA">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">MidDistLADGraftStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="MidDistLADGraftStenosisNA">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">CircGraftStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="CircGraftStenosisNA">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">RCAGraftStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="RCAGraftStenosisNA">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                       <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">RamusGraftStenosisNA</span>
+                                       <select id="selecting" class="wow fadeInUp" data-wow-delay="0.6s" name="RamusGraftStenosisNA">
+                                           <option></option>
+                                           <option>Yes</option>
+                                           <option>No</option>
+                                       </select>
+                               </div>
+
+                               <div class="form-row">
+                                   <button id="submit_btn" class="wow fadeInUp" data-wow-delay="0.6s" type="submit">Submit Form</button>
+                               </div>
+
+                           </form>
+
+
+
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+
+     <!-- FOOTER -->
+     <footer data-stellar-background-ratio="5">
+          <div class="container">
+
+          </div>
+     </footer>
+
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.sticky.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/jquery.magnific-popup.min.js"></script>
+     <script src="js/magnific-popup-options.js"></script>
+     <script src="js/wow.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/custom.js"></script>
+
+</body>
+</html>
