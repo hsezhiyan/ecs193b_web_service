@@ -48,7 +48,7 @@ def prediction(ef_dict):
         already_loaded = True
         loaded_model = load_model()
     print("model loaded")
-    prediction = loaded_model.predict([ef_data_list])
+    prediction = loaded_model.predict(ef_data_list)
 
     return prediction[0]
 
