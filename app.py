@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, url_for, redirect
 from sklearn.svm import SVC # for the SVM cath prediction model
 
 from svm_helper import process_svm_dict
+from ef_helper import prediction, ef_output_string
 from followup_ef_helper import prediction_and_uncertainty, create_output_string
 from svm_helper import process_svm_dict
 from NNprocess_code import process_nn_dict
