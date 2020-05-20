@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, url_for, redirect
 from sklearn.svm import SVC # for the SVM cath prediction model
 
 from svm_helper import process_svm_dict
+from ef_helper import prediction, ef_output_string
 from followup_ef_helper import prediction_and_uncertainty, create_output_string
 from svm_helper import process_svm_dict
 from NNprocess_code import process_nn_dict
@@ -15,6 +16,22 @@ app = Flask(__name__)
 @app.route("/", methods=["GET"])
 def home():
 	return render_template("search_page.html")
+
+@app.route("/ef_page", methods=["GET"])
+def ef_page():
+    return render_template("ef.html")
+
+@app.route("/ef_calc", methods=["GET"])
+def ef_calc():
+	ef_data = request.args.to_dict()
+
+	try:
+		result = prediction(ef_data)
+	except Exception as error:
+		return str(error)
+
+	return_string = ef_output_string(result)
+	return return_string
 
 @app.route("/followup_ef_page", methods=["GET"])
 def followup_ef_page():
