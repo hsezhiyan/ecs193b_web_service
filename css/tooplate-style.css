@@ -628,6 +628,7 @@ http://www.tooplate.com/view/2098-health
     padding-right: 20%;
     height: 100%;
     width: 50%;
+    overflow: scroll;
   }
   #inputText{
     height: 100%;
