@@ -16,13 +16,13 @@ def mse_loss(y_actual, y_pred):
 def load_model():
     adam = Adam(lr = 0.002, beta_1 = 0.9, beta_2 = 0.999) # a hyperparameter
     # load weights into new model
-    loaded_model = tf.keras.models.load_model('trained_models/EFmodel.h5')
+    model = tf.keras.models.load_model('trained_models/EFmodel.h5')
     print("weights loaded")
     #loaded_model.compile(loss=mse_loss, optimizer=adam, metrics=[mse_loss])
-    loaded_model.summary()
-    point_five = loaded_model.predict(np.zeros((1, 5)))
+    point_five = model.predict(np.zeros((1, 5)))
+    print(point_five)
 
-    return loaded_model
+    return model
 
 def prediction(ef_dict):
 
@@ -39,6 +39,7 @@ def prediction(ef_dict):
         already_loaded = True
         loaded_model = load_model()
     print("model loaded")
+    loaded_model.summary()
     print(ef_data_list)
     prediction = loaded_model.predict(ef_data_list)
 
