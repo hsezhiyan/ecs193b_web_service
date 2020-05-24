@@ -81,23 +81,23 @@ def create_output_string(mean, variance):
 
 	if mean < 0.35:
 		lethality = "LETHAL"
-		if variance > 0.006 and variance < 0.015:
-			uncertainty = "Very trustable"
-		elif variance > 0.015:
-			uncertainty = "Very untrustable"
-		else:
-			uncertainty = "Uncertain"
+		# if variance > 0.006 and variance < 0.015:
+		# 	uncertainty = "Very trustable"
+		# elif variance > 0.015:
+		# 	uncertainty = "Very untrustable"
+		# else:
+		# 	uncertainty = "Uncertain"
 	else:
 		lethality = "NOT LETHAL"
-		if variance > 0.006 and variance < 0.015:
-			uncertainty = "Very trustable"
-		elif variance > 0.015:
-			uncertainty = "Very untrustable"
-		else:
-			uncertainty = "Uncertain"
+		# if variance > 0.006 and variance < 0.015:
+		# 	uncertainty = "Very trustable"
+		# elif variance > 0.015:
+		# 	uncertainty = "Very untrustable"
+		# else:
+		# 	uncertainty = "Uncertain"
 
 	output_string = """The predicted followup EF is {}, which is {}. 
-					The uncertainty is {}, classifed as {}""".format(mean, lethality, variance, uncertainty)
+					The uncertainty is {}.""".format(mean, lethality, variance)
 	return output_string
 
 def process_followup_ef_dict(followup_ef_dict):
