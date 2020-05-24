@@ -31,7 +31,7 @@ def ef_calc():
 		return str(error)
 
 	return_string = ef_output_string(result)
-	return return_string
+	return render_template('result_page.html', title='EF Prediction Results',result=return_string)
 
 @app.route("/followup_ef_page", methods=["GET"])
 def followup_ef_page():
@@ -47,7 +47,7 @@ def followup_ef_calc():
 		return str(error)
 
 	return_string = create_output_string(mean, variance)
-	return return_string
+	return render_template('result_page.html', title='Follow Up EF Prediction Results',result=return_string)
 
 @app.route("/NN_cath_page", methods=["GET"])
 def NN_cath_page():
@@ -97,7 +97,7 @@ def NN_cath_calc():
 	cath_data_list = np.array(cath_data_list)
 	cath_prediction = loaded_model.predict(np.array([cath_data_list]))[0][0]
 	return_string = f"Cath result is {cath_prediction}"
-	return return_string
+	return render_template('result_page.html', title='Neural Network Prediction Results',result=return_string)
 
 @app.route("/svm_cath_page", methods=["GET"])
 def svm_cath_page():
@@ -137,7 +137,7 @@ def svm_cath_calc():
 
 	cath_prediction = loaded_model.predict([cath_data_list])
 	return_string = f"Cath result is {cath_prediction}"
-	return return_string
+	return render_template('result_page.html', title='SVM Prediction Results',result=return_string)
 
 if __name__ == "__main__":
 	app.run()
