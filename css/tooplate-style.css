@@ -17,6 +17,12 @@ http://www.tooplate.com/view/2098-health
     width: 100%;
     height: 60px;
   }
+  #resultText {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 
   /*---------------------------------------
