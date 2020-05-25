@@ -3,6 +3,8 @@
 <head>
 
      <title>EF Model</title>
+     
+     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -78,7 +80,7 @@
                          <!-- NEWS THUMB -->
                          <div class="news-detail-thumb">
 
-                              <form class="form-basic" method="get" action="ef_calc">
+                              <form class="form-basic" id="efForm" method="get" action="ef_calc" name="EjectionFractionForm">
                                   <img id="cath_photo" src="/images/image2.jpg"/>
                                   <div class="form-title-row">
                                       <h1 class="wow fadeInUp" data-wow-delay="0.6s">Predict an EF result</h1>
@@ -86,27 +88,27 @@
 
                                   <div class="form-row">
                                         <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">IVS d, 2D</span>
-                                        <input id="inputText" type="text" class="wow fadeInUp" data-wow-delay="0.6s" name="IVS d, 2D">
+                                        <input id="ivsd" type="number" min="0" max="5" step="0.01" class="wow fadeInUp" data-wow-delay="0.6s" name="IVS d, 2D">
                                   </div>
 
                                   <div class="form-row">
                                         <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">LV d, 2D</span>
-                                        <input id="inputText" type="text" class="wow fadeInUp" data-wow-delay="0.6s" name="LV d, 2D">
+                                        <input id="lvd" type="number" min="0" max="10" step="0.01" class="wow fadeInUp" data-wow-delay="0.6s" name="LV d, 2D">
                                   </div>
 
                                   <div class="form-row">
                                         <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">LV s, 2D</span>
-                                        <input id="inputText" type="text" class="wow fadeInUp" data-wow-delay="0.6s" name="LV s, 2D">
+                                        <input id="lvs" type="number" min="0" max="10" step="0.01" class="wow fadeInUp" data-wow-delay="0.6s" name="LV s, 2D">
                                   </div>
 
                                   <div class="form-row">
                                         <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">RVSP (TR)</span>
-                                        <input id="inputText" type="text" class="wow fadeInUp" data-wow-delay="0.6s" name="RVSP (TR)">
+                                        <input id="RVSP" type="number" min="0" max="125" step="0.01" class="wow fadeInUp" data-wow-delay="0.6s" name="RVSP (TR)">
                                   </div>
 
                                   <div class="form-row">
                                         <span id="surveytext" class="wow fadeInUp" data-wow-delay="0.6s">LA Vol A/L Volume</span>
-                                        <input id="inputText" type="text" class="wow fadeInUp" data-wow-delay="0.6s" name="LA Vol A/L Volume  ">
+                                        <input id="laVol" type="number" min="0" max="200" step="0.01" class="wow fadeInUp" data-wow-delay="0.6s" name="LA Vol A/L Volume">
                                   </div>
 
                                   <div class="form-row">
@@ -115,7 +117,7 @@
 
                               </form>
 
-
+                                
 
                     </div>
 
