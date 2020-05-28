@@ -52,7 +52,7 @@ def ef_output_string(pred):
 	else:
 		lethality = "NOT LETHAL"
 
-	output_string = """The predicted followup EF is {}, which is {}.""".format(pred, lethality)
+	output_string = """The predicted regular EF is {}, which is {}.""".format(pred, lethality)
 	return output_string
 
 def process_ef_dict(ef_dict):
